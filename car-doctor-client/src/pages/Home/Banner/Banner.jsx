@@ -5,7 +5,7 @@ import image4 from "../../../assets/images/homeCarousel/4.jpg"
 
 const Banner = () => {
     const bannerText = <>
-        <div className="absolute flex flex-col gap-y-6 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)] h-[100%] w-[100%] pt-20 pl-24">
+        <div className="absolute flex flex-col gap-y-6 bg-gradient-to-r from-[#151515] to-[rgba(21, 21, 21, 0.00)] h-[100%] w-[100%] pt-20 pl-24 rounded-lg">
             <h3 className="text-white text-xl lg:text-5xl  font-bold w-[25%] h ">Affordable Price For Car Servicing</h3>
             <p className="text-[#FFF]  text-lg w-[30vw]" >There are many variations of passages of  available, but the majority have suffered alteration in some form</p>
             <div className="flex gap-4">
@@ -15,7 +15,7 @@ const Banner = () => {
         </div>
     </>
     return (
-        <div className="carousel w-[90vw] mx-16  md:h-[80vh] ">
+        <div className="carousel w-[90vw] mx-16  md:h-[80vh] rounded-lg">
             <div id="slide1" className="carousel-item relative w-[90vw]">
                 <img src={image1} className="w-full" />
                 {bannerText}
