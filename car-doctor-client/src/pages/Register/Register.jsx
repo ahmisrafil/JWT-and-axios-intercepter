@@ -7,9 +7,10 @@ const Register = () => {
     const handleRegister=(event)=>{
         event.preventDefault();
         const form = event.target;
+        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password);
+        console.log(name, email, password);
     }
     return (
         <div className="hero min-h-screen bg-base-200">
