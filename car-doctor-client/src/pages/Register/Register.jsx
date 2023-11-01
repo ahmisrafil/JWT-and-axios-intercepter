@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import image from "../../assets/images/login/login.svg"
+import { useContext } from "react";
+import { AuthContext } from "../../components/Provider/AuthProvider";
 
 
 const Register = () => {
+
+    const {createUser} = useContext(AuthContext);
 
     const handleRegister=(event)=>{
         event.preventDefault();
@@ -11,7 +15,19 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name, email, password);
+
+        createUser(email,password)
+        .then(result=>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(error=> console.log(error))
+
+
     }
+
+
+
     return (
         <div className="hero min-h-screen bg-base-200">
             <div className="hero-content flex-col lg:flex-row">
