@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import image from "../../assets/images/login/login.svg"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../../components/Provider/AuthProvider";
 
 const Login = () => {
-
+    const [user, setUser] = useState();
     const {signIn} = useContext(AuthContext);
 
     const handleLogin=(event)=>{
@@ -19,6 +19,7 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            setUser(user);
         })
         .catch(error=> console.log(error))
 
@@ -55,6 +56,9 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            {
+                user && <Navigate to="/"></Navigate>
+            }
         </div>
     );
 };
